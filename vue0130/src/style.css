@@ -1,0 +1,111 @@
+﻿:root {
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --theme-primary: #2f7ed8;
+  --theme-primary-deep: #1d4f92;
+  --theme-accent: #18b495;
+  --theme-bg-start: #f3f9ff;
+  --theme-bg-end: #dbeaff;
+  --theme-card-bg: rgba(255, 255, 255, 0.82);
+  --theme-card-border: rgba(61, 124, 193, 0.22);
+  --theme-text-main: #173c67;
+  --theme-text-sub: #5d7897;
+  --theme-grid: rgba(88, 124, 168, 0.24);
+  --mobile-gutter: 12px;
+  --mobile-radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  color: var(--theme-text-main);
+  background: linear-gradient(145deg, var(--theme-bg-start), var(--theme-bg-end));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  :where(.panel, .resource-card, .panel-card, .detail-card, .summary-card, .product-tile) {
+    border-radius: var(--mobile-radius);
+  }
+
+  :where(.panel-header, .filter-bar, .header-actions, .pager-wrap, .summary-bar, .table-tools) {
+    gap: 8px;
+  }
+
+  :where(.panel-header) {
+    flex-wrap: wrap;
+  }
+
+  :where(.header-actions) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  :where(.header-actions .el-button) {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  :where(.panel .el-pagination) {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  :where(.table-wrap) {
+    overflow: auto;
+    max-width: 100%;
+    border-radius: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  :where(.table-wrap .el-table) {
+    min-width: 720px;
+  }
+
+  :where(.el-table) {
+    font-size: 12px;
+  }
+
+  :where(.el-table .cell) {
+    line-height: 1.35;
+  }
+
+  :where(.el-dialog) {
+    width: min(92vw, 520px) !important;
+    margin-top: 8vh !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :where(.table-wrap .el-table) {
+    min-width: 640px;
+  }
+}
